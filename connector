@@ -1,0 +1,22 @@
+#!/bin/bash
+SRV=${1?Error: Server ref is missing}
+echo -e "
+1. Space disk
+2. Mysql Process
+0. Exit"
+
+read -p "What's your action ? " ac
+
+ case $ac in
+  1)
+	echo "Space disk"
+    ssh -n root@$SRV "echo SUCCESS; df -h | awk '{ print \$5 \" \" \$6}' ";
+    ;;
+  2)
+    echo "Mysql Process"
+    ssh -t -t root@$SRV "echo SUCCESS; mysql -e 'show processlist \G;'";
+    ;;
+  0)
+    exit
+    ;;
+ esac
