@@ -1,7 +1,7 @@
 #!/bin/bash
 echo Enter the server name :
 read SRV
-curl -s -O -L https://github.com/th333boo/actionONE/archive/main.zip && unzip -j -o main.zip
+curl -s -O -L https://github.com/th333boo/actionONE/archive/main.zip && unzip -j -o -qq main.zip
 echo "Updating connector OK"
 rm main.zip
 chmod +x connector launcher && ./connector $SRV
