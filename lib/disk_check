@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function vm_cut() {
+for VM in list
+do
+    cat list | cut -d "." -f1 on $VM;
+then echo $VM
+done
+}
+
+function path_cut() {
+for PATH in list
+do
+        cat list | cut -d " " -f3 on $PATH
+done
+}
+
+function show_cut() {
+
+}
